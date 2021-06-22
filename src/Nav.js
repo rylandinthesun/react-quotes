@@ -5,7 +5,7 @@ const Nav = () => {
 		<nav>
 			<ul>
 				<li>
-					<a href="/">
+					<a className="home-btn" href="/">
 						<i className="fas fa-quote-right" />
 					</a>
 				</li>

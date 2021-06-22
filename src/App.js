@@ -61,6 +61,12 @@ function App () {
 					</button>
 				)}
 			</div>
+			<footer>
+				Inspirational quotes provided by{'  '}
+				<a className="zen-link" href="https://zenquotes.io/" target="_blank">
+					ZenQuotes API
+				</a>
+			</footer>
 		</div>
 	);
 }
