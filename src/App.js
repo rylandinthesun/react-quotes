@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import axios from 'axios';
+import { useState } from 'react';
+import Nav from './Nav';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App () {
+	const [
+		quote,
+		setQuote
+	] = useState([]);
+
+	const getQuote = () => {
+		try {
+			axios.get('/today').then((res) => {
+				const q = res.data;
+				setQuote(q);
+			});
+		} catch (e) {
+			console.log(e);
+		}
+	};
+
+	return (
+		<div className="App">
+			<Nav />
+			<div className="main">
+				{quote.length > 0 ? (
+					quote.map((q, pos) => (
+						<div className="quote-container" key={pos}>
+							<div className="quote">"{q.q}"</div>
+							<div className="author">- {q.a}</div>
+							<a href="#">
+								<i className="far fa-plus-square" />
+							</a>
+						</div>
+					))
+				) : (
+					<button onClick={getQuote}>Get Quote of the Day</button>
+				)}
+			</div>
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,24 @@
+nav {
+	height: 60px;
+	background-color: #393e46;
+	overflow: hidden;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+li {
+	padding: 18px 20px;
+}
+
+li a {
+	text-decoration: none;
+	color: #ffd369;
+	font-size: x-large;
+}

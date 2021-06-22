@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+	background-color: #eeeeee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+	background-color: #ffd369;
+	padding: 14px 20px;
+	border: 3px solid #222831;
+	font-size: 1.2rem;
+	box-shadow: 3px 3px #393e46;
+	cursor: pointer;
+	outline: none;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 5px;
+	transition: box-shadow 0.2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:active {
+	box-shadow: 0px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.quote-container {
+	background-color: #ffd369;
+	width: 250px;
+	padding: 20px 20px;
+	border-radius: 5px;
+	box-shadow: #222831 0px 0px 0px 3px inset, #eeeeee 10px -10px 0px -3px, #393e46 10px -10px,
+		#eeeeee 20px -20px 0px -3px, #393e46 20px -20px, #eeeeee 30px -30px 0px -3px, #393e46 30px -30px,
+		#eeeeee 40px -40px 0px -3px;
+	animation-name: animate;
+	animation-duration: 1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.8rem;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #222831;
+}
+
+.author {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #393e46;
+	margin-bottom: 20px;
+	padding-right: 10px;
+	text-align: end;
+}
+
+.quote-container a {
+	text-decoration: none;
+}
+
+.far {
+	font-size: x-large;
+	color: #eeeeee;
+	display: flex;
+	justify-content: center;
+}
+
+@keyframes animate {
+	from {
+		box-shadow: #222831 0px 0px 0px 3px inset;
+	}
+	to {
+		box-shadow: #222831 0px 0px 0px 3px inset, #eeeeee 10px -10px 0px -3px, #393e46 10px -10px,
+			#eeeeee 20px -20px 0px -3px, #393e46 20px -20px, #eeeeee 30px -30px 0px -3px, #393e46 30px -30px,
+			#eeeeee 40px -40px 0px -3px;
+	}
 }
