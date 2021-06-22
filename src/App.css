@@ -13,7 +13,7 @@ body {
 	align-items: center;
 }
 
-button {
+.get-btn {
 	background-color: #ffd369;
 	padding: 14px 20px;
 	border: 3px solid #222831;
@@ -26,8 +26,45 @@ button {
 	transition: box-shadow 0.2s;
 }
 
-button:active {
+.get-btn:active {
 	box-shadow: 0px 0px;
+}
+
+.new-btn {
+	background-color: #ffd369;
+	padding: 8px 12px;
+	border: 2px solid #222831;
+	cursor: pointer;
+	outline: none;
+	font-family: 'Montserrat', sans-serif;
+	color: #222831;
+	border-radius: 5px;
+	transition: background-color 0.4s;
+}
+
+.new-btn:hover {
+	background-color: #fac54a;
+}
+
+.btn-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.twitter-btn {
+	background-color: #ffd369;
+	padding: 8px 12px;
+	border: 2px solid #222831;
+	cursor: pointer;
+	outline: none;
+	color: #222831;
+	border-radius: 5px;
+	transition: background-color 0.4s;
+}
+
+.twitter-btn:hover {
+	background-color: #fac54a;
 }
 
 .quote-container {
@@ -36,29 +73,32 @@ button:active {
 	padding: 20px 20px;
 	border-radius: 5px;
 	box-shadow: #222831 0px 0px 0px 3px inset, #eeeeee 10px -10px 0px -3px, #393e46 10px -10px,
-		#eeeeee 20px -20px 0px -3px, #393e46 20px -20px, #eeeeee 30px -30px 0px -3px, #393e46 30px -30px,
-		#eeeeee 40px -40px 0px -3px;
+		#eeeeee 20px -20px 0px -3px, #393e46 20px -20px, #eeeeee 30px -30px 0px -3px;
 	animation-name: animate;
 	animation-duration: 1s;
 }
 
 .quote {
 	font-family: 'Playfair Display', serif;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	font-weight: 500;
 	text-align: center;
 	margin-bottom: 20px;
 	color: #222831;
+	animation-name: text;
+	animation-duration: 1s;
 }
 
 .author {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	font-weight: 400;
 	color: #393e46;
 	margin-bottom: 20px;
 	padding-right: 10px;
 	text-align: end;
+	animation-name: text;
+	animation-duration: 1s;
 }
 
 .quote-container a {
@@ -78,7 +118,15 @@ button:active {
 	}
 	to {
 		box-shadow: #222831 0px 0px 0px 3px inset, #eeeeee 10px -10px 0px -3px, #393e46 10px -10px,
-			#eeeeee 20px -20px 0px -3px, #393e46 20px -20px, #eeeeee 30px -30px 0px -3px, #393e46 30px -30px,
-			#eeeeee 40px -40px 0px -3px;
+			#eeeeee 20px -20px 0px -3px, #393e46 20px -20px, #eeeeee 30px -30px 0px -3px;
+	}
+}
+
+@keyframes text {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
