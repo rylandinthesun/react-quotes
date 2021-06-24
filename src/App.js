@@ -52,8 +52,13 @@ function App () {
 			</div>
 			<footer>
 				Inspirational quotes provided by{'  '}
-				<a className="zen-link" href="https://zenquotes.io/" target="_blank" rel="noopener noreferrer">
-					ZenQuotes API
+				<a
+					className="zen-link"
+					href="https://github.com/lukePeavey/quotable"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Quotable
 				</a>
 			</footer>
 		</div>
