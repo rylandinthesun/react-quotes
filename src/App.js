@@ -5,15 +5,15 @@ import './App.css';
 
 function App () {
 	const [
-		radnomQuote,
+		randomQuote,
 		setRandomQuote
 	] = useState('');
 
 	const getQuote = () => {
 		try {
-			axios.get('https://type.fit/api/random').then((res) => {
+			axios.get('https://api.quotable.io/random').then((res) => {
 				const q = res.data;
-
+				console.log(q);
 				setRandomQuote(q);
 			});
 		} catch (e) {
@@ -25,17 +25,17 @@ function App () {
 		<div className="App">
 			<Nav />
 			<div className="main">
-				{radnomQuote ? (
+				{randomQuote ? (
 					<div className="quote-container">
-						<div className="quote">"{radnomQuote.text}"</div>
-						<div className="author">- {radnomQuote.author || 'Author Unknown '}</div>
+						<div className="quote">"{randomQuote.content}"</div>
+						<div className="author">- {randomQuote.author || 'Author Unknown '}</div>
 						<div className="btn-group">
 							<button className="new-btn" onClick={getQuote}>
 								New Quote
 							</button>
 							<a
 								className="twitter-btn"
-								href={`https://twitter.com/intent/tweet?text=${radnomQuote.text}${'  - '}${radnomQuote.author}`}
+								href={`https://twitter.com/intent/tweet?text=${randomQuote.content}${'  - '}${randomQuote.author}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
