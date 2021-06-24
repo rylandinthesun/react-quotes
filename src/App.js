@@ -11,11 +11,10 @@ function App () {
 
 	const getQuote = () => {
 		try {
-			axios.get('https://type.fit/api/quotes').then((res) => {
+			axios.get('https://type.fit/api/random').then((res) => {
 				const q = res.data;
 
-				let randomIdx = Math.floor(Math.random() * q.length);
-				setRandomQuote(q[randomIdx]);
+				setRandomQuote(q);
 			});
 		} catch (e) {
 			console.log(e);
