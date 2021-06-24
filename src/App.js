@@ -5,10 +5,6 @@ import './App.css';
 
 function App () {
 	const [
-		quotes,
-		setQuotes
-	] = useState([]);
-	const [
 		radnomQuote,
 		setRandomQuote
 	] = useState('');
@@ -17,7 +13,6 @@ function App () {
 		try {
 			axios.get('https://type.fit/api/quotes').then((res) => {
 				const q = res.data;
-				setQuotes(q);
 
 				let randomIdx = Math.floor(Math.random() * q.length);
 				setRandomQuote(q[randomIdx]);
