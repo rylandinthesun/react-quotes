@@ -63,7 +63,7 @@ function App () {
 			</div>
 			<footer>
 				Inspirational quotes provided by{'  '}
-				<a className="zen-link" href="https://zenquotes.io/" target="_blank">
+				<a className="zen-link" href="https://zenquotes.io/" target="_blank" rel="noopener noreferrer">
 					ZenQuotes API
 				</a>
 			</footer>
