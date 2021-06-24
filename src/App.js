@@ -5,26 +5,22 @@ import './App.css';
 
 function App () {
 	const [
-		quote,
-		setQuote
+		quotes,
+		setQuotes
 	] = useState([]);
+	const [
+		radnomQuote,
+		setRandomQuote
+	] = useState('');
 
 	const getQuote = () => {
 		try {
-			axios.get('/today').then((res) => {
+			axios.get('https://type.fit/api/quotes').then((res) => {
 				const q = res.data;
-				setQuote(q);
-			});
-		} catch (e) {
-			console.log(e);
-		}
-	};
+				setQuotes(q);
 
-	const getRandomQuote = () => {
-		try {
-			axios.get('/random').then((res) => {
-				const q = res.data;
-				setQuote(q);
+				let randomIdx = Math.floor(Math.random() * q.length);
+				setRandomQuote(q[randomIdx]);
 			});
 		} catch (e) {
 			console.log(e);
@@ -35,29 +31,27 @@ function App () {
 		<div className="App">
 			<Nav />
 			<div className="main">
-				{quote.length > 0 ? (
-					quote.map((q, pos) => (
-						<div className="quote-container" key={pos}>
-							<div className="quote">"{q.q}"</div>
-							<div className="author">- {q.a}</div>
-							<div className="btn-group">
-								<button className="new-btn" onClick={getRandomQuote}>
-									New Quote
-								</button>
-								<a
-									className="twitter-btn"
-									href={`https://twitter.com/intent/tweet?text=${q.q}${'  - '}${q.a}`}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<i className="fab fa-twitter" />
-								</a>
-							</div>
+				{radnomQuote ? (
+					<div className="quote-container">
+						<div className="quote">"{radnomQuote.text}"</div>
+						<div className="author">- {radnomQuote.author || 'Author Unknown '}</div>
+						<div className="btn-group">
+							<button className="new-btn" onClick={getQuote}>
+								New Quote
+							</button>
+							<a
+								className="twitter-btn"
+								href={`https://twitter.com/intent/tweet?text=${radnomQuote.text}${'  - '}${radnomQuote.author}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i className="fab fa-twitter" />
+							</a>
 						</div>
-					))
+					</div>
 				) : (
 					<button className="get-btn" onClick={getQuote}>
-						Get Quote of the Day
+						Get A Random Quote
 					</button>
 				)}
 			</div>
