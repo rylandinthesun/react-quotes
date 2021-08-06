@@ -1,14 +1,15 @@
-import './Nav.css';
-
-const Nav = () => {
+const Nav = ({ getQuote, randomQuote }) => {
 	return (
 		<nav>
 			<ul>
-				<li>
-					<a className="home-btn" href="/">
-						<i className="fas fa-quote-right" />
-					</a>
+				<li className="home-logo">
+					<i className="fas fa-quote-right" />
 				</li>
+				{randomQuote ? (
+					<button className="btn new" onClick={() => getQuote()}>
+						New Quote
+					</button>
+				) : null}
 			</ul>
 		</nav>
 	);
