@@ -97,7 +97,7 @@ function App () {
 							<div className="external-links">
 								<a
 									className="btn email"
-									href={`mailto:?subject=I%20thought%20you%20might%20like%20this%20quote&body="${randomQuote.content}"${'  - '}${randomQuote.author}`}
+									href={`mailto:?subject=I%20thought%20you%20might%20enjoy%20this%20quote...&body="${randomQuote.content}"${'  - '}${randomQuote.author}`}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
