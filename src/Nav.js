@@ -5,7 +5,7 @@ const Nav = ({ getQuote, randomQuote }) => {
 				<li className="home-logo">
 					<i className="fas fa-quote-right" />
 				</li>
-				{randomQuote ? (
+				{randomQuote.length >= 1 ? (
 					<button className="btn new" onClick={() => getQuote()}>
 						New Quote
 					</button>

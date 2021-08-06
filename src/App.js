@@ -8,7 +8,7 @@ function App () {
 	const [
 		randomQuote,
 		setRandomQuote
-	] = useState('');
+	] = useState([]);
 
 	const [
 		favQuotes,
@@ -82,7 +82,7 @@ function App () {
 		<div className="App">
 			<Nav getQuote={getQuote} randomQuote={randomQuote} />
 			<div className="main">
-				{randomQuote ? (
+				{randomQuote.length >= 1 ? (
 					<div className="quote-container">
 						<div className="quote">"{randomQuote.content}"</div>
 						<div className="author">- {randomQuote.author || 'Author Unknown '}</div>
