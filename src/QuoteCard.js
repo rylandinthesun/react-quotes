@@ -1,6 +1,6 @@
 const QuoteCard = ({ content, author, handleRemove, id }) => {
 	return (
-		<div className="quote-container-2">
+		<div className="quote-card-container">
 			<div className="quote">"{content}"</div>
 			<div className="author">- {author}</div>
 			<div className="btn-group">

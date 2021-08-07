@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -41,6 +41,7 @@ ul {
 .main {
 	margin-top: 10vh;
 	margin-bottom: 8vh;
+	padding: 0 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -52,11 +53,10 @@ ul {
 	padding: 14px 20px;
 	border: 3px solid #222831;
 	font-size: 1.2rem;
-	box-shadow: 3px 3px #393e46;
+	box-shadow: 1px 1px #222831, 2px 2px #222831, 3px 3px #222831;
 	cursor: pointer;
 	outline: none;
 	font-family: 'Montserrat', sans-serif;
-	border-radius: 5px;
 	transition: box-shadow 0.2s;
 }
 
@@ -73,7 +73,6 @@ ul {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1rem;
 	color: #222831;
-	border-radius: 5px;
 	transition: background-color 0.4s;
 }
 
@@ -89,7 +88,8 @@ ul {
 
 .saved {
 	font-family: 'Montserrat', sans-serif;
-	color: #222831;
+	font-size: 1.3rem;
+	color: #fac54a;
 	text-transform: uppercase;
 	font-weight: 800;
 	animation-name: text;
@@ -110,32 +110,55 @@ ul {
 }
 
 .quote-container {
-	background-color: #ffd369;
-	width: 225px;
-	padding: 20px 20px;
-	border-radius: 5px;
-	box-shadow: #222831 0px 0px 0px 3px inset, #eeeeee 10px -10px 0px -3px, #393e46 10px -10px,
-		#eeeeee 20px -20px 0px -3px, #393e46 20px -20px;
-	animation-name: animate;
+	border: 4px solid #393e46;
+	padding: 18px 20px;
+	box-shadow: 1px 1px #393e46, 2px 2px #393e46, 3px 3px #393e46, 4px 4px #393e46, 5px 5px #393e46;
+	animation-name: text;
 	animation-duration: 1s;
 }
 
-.quote {
-	font-family: 'Gilda Display', serif;
-	font-size: 1.4rem;
-	font-weight: 400;
+.quote-main {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 1.8rem;
 	text-align: center;
 	margin-bottom: 20px;
+	color: #393e46;
+	animation-name: text;
+	animation-duration: 1s;
+}
+.author-main {
+	font-family: 'PT Serif', serif;
+	font-size: 1.2rem;
+	font-weight: 400;
 	color: #222831;
+	margin-bottom: 40px;
+	padding-right: 10px;
+	text-align: end;
+	animation-name: text;
+	animation-duration: 1s;
+}
+
+.btn-main {
+	background-color: #eeeeee;
+}
+
+.quote {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.3rem;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #393e46;
 	animation-name: text;
 	animation-duration: 1s;
 }
 
 .author {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 0.7rem;
-	font-weight: 800;
-	color: #393e46;
+	font-family: 'PT Serif', serif;
+	font-size: 0.9rem;
+	font-weight: 400;
+	color: #222831;
 	margin-bottom: 20px;
 	padding-right: 10px;
 	text-align: end;
@@ -181,11 +204,10 @@ section {
 	animation-duration: 1s;
 }
 
-.quote-container-2 {
+.quote-card-container {
 	background-color: #ffd369;
 	width: 225px;
 	padding: 20px 20px;
-	border-radius: 5px;
 	box-shadow: #222831 0px 0px 0px 3px inset;
 	animation-name: text;
 	animation-duration: 1s;
@@ -193,7 +215,7 @@ section {
 
 .quotable {
 	color: #393e46;
-	font-family: 'Gilda Display', serif;
+	font-family: 'PT Serif', serif;
 	font-size: 0.8rem;
 	text-align: center;
 	margin-top: 10px;
@@ -213,25 +235,7 @@ section {
 }
 
 .clear-btn {
-	background-color: #ffd369;
-	padding: 12px 20px;
 	margin-bottom: 10vh;
-	border: 3px solid #222831;
-	font-size: 1.2rem;
-	box-shadow: 3px 3px #393e46;
-	cursor: pointer;
-	outline: none;
-	font-family: 'Montserrat', sans-serif;
-	border-radius: 5px;
-	transition: all 0.2s;
-}
-
-.clear-btn:hover {
-	background-color: #fac54a;
-}
-
-.clear-btn:active {
-	box-shadow: 0px 0px;
 }
 
 .clear-btn-group {
@@ -242,7 +246,7 @@ section {
 
 .clear-btn-group h6 {
 	font-size: 1rem;
-	font-family: 'Gilda Display', serif;
+	font-family: 'PT Serif', serif;
 	text-align: center;
 	margin-bottom: 15px;
 	margin-top: 0;

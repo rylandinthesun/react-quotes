@@ -84,19 +84,19 @@ function App () {
 			<div className="main">
 				{randomQuote.length >= 1 ? (
 					<div className="quote-container">
-						<div className="quote">"{randomQuote.content}"</div>
-						<div className="author">- {randomQuote.author || 'Author Unknown '}</div>
+						<div className="quote-main">"{randomQuote.content}"</div>
+						<div className="author-main">- {randomQuote.author || 'Author Unknown '}</div>
 						<div className="btn-group">
 							{match.length >= 1 ? (
 								<div className="saved">Saved</div>
 							) : (
-								<button onClick={() => addFav(randomQuote)} className="btn">
+								<button onClick={() => addFav(randomQuote)} className="btn btn-main">
 									Save Quote
 								</button>
 							)}
 							<div className="external-links">
 								<a
-									className="btn email"
+									className="btn email btn-main"
 									href={`mailto:?subject=I%20thought%20you%20might%20enjoy%20this%20quote...&body="${randomQuote.content}"${'  - '}${randomQuote.author}`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -104,7 +104,7 @@ function App () {
 									<i className="fas fa-envelope" />
 								</a>
 								<a
-									className="btn twitter"
+									className="btn twitter btn-main"
 									href={`https://twitter.com/intent/tweet?text="${randomQuote.content}"${'  - '}${randomQuote.author}`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -164,7 +164,7 @@ function App () {
 							</div>
 							<div className="clear-storage">
 								{!open && (
-									<button onClick={() => openModal()} className="clear-btn">
+									<button onClick={() => openModal()} className="get-btn clear-btn">
 										Remove All Saves
 									</button>
 								)}
